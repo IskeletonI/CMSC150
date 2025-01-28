@@ -1,0 +1,24 @@
+ public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter the number of a month: ");
+        int monthN = scan.nextInt();
+        String months = "";
+        switch(monthN){
+            case 1: months += "February, ";
+            case 2: months += "March, ";
+            case 3: months += "April, ";
+            case 4: months += "May, ";
+            case 5: months += "June, ";
+            case 6: months += "July, ";
+            case 7: months += "August, ";
+            case 8: months += "September, ";
+            case 9: months += "October, ";
+            case 10: months += "November, ";
+            case 11: months += "December.";
+
+            
+            default: System.out.println("The months following month " + monthN+ " are: " + months);
+        }
+        
+    }
