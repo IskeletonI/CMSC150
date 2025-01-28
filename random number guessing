@@ -1,20 +1,20 @@
-    public static void main(String[] args){
+public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
                 
         
         
-        int rand2 = (int)(Math.random()*100) + 1;
-        int guess2 = -1;
-        while (rand2 != guess2) {
-            System.out.print(" Guess an integer on the range 1-100 inclusive: ");
-            guess2 = scan.nextInt();
-            if (guess2 < rand2) {
-                System.out.println(guess2 + " is too low");
+        int rand = (int)(Math.random()*100) + 1;
+        int guess = 0;
+        while (rand != guess) {
+            System.out.print("Guess an integer on the range 1-100 inclusive: ");
+            guess = scan.nextInt();
+            if (guess < rand) {
+                System.out.println(guess + " is too low");
             }
             else{
-                System.out.println(guess2 + " is too high");
+                System.out.println(guess + " is too high");
             }
             
         }
-        System.out.println("Congratulations, the number " + guess2 + " is correct!");
+        System.out.println("Congratulations, the number " + guess + " is correct!");
     }
