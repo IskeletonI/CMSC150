@@ -1,0 +1,16 @@
+public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    int i = 0,n = 1;
+    int[] ns = new int[99];
+    while (n != 0){
+        System.out.print("Enter an integer, zero to finish: ");
+        n = scan.nextInt();
+        ns[i] = n;
+        i++;
+    }
+    System.out.println("data in reverse order: ");
+    for(int j = i-2; j >= 0; j--){
+        System.out.print(ns[j] + " ");
+    }
+    
+    }    
