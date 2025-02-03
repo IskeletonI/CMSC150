@@ -1,0 +1,45 @@
+ public static void main(String[] args) throws Exception{
+        
+        String filename = "scores.txt";
+        java.io.File file = new java.io.File(filename);
+        Scanner scan = new Scanner(file);
+        
+        int highNum = 0, lowNum = 100;
+        while(scan.hasNext()){
+            int num = scan.nextInt(); 
+            if (num > highNum){
+                highNum = num;
+            }
+            if (num < lowNum){
+                lowNum = num;
+            }
+        }
+        System.out.println("The file use is " + filename);
+        System.out.println("The highest grade is " + highNum);
+        System.out.println("The lowest grade is " + lowNum);
+        
+        filename = "students-grade.txt";
+        file = new java.io.File(filename);
+        scan = new Scanner(file);
+        
+        String[] As = new String[99];
+        String[] Bs = new String[99];
+        int i =0;
+        while(scan.hasNext()){
+            String name = scan.next();
+            int num = scan.nextInt(); 
+            if (num >= 90){
+                As[i] = name;
+            }
+            else if (num >=80){
+                Bs[i] = name;
+            }
+            i++;
+        }
+        
+ 
+        
+        
+        
+
+    }
