@@ -18,28 +18,34 @@
         System.out.println("The highest grade is " + highNum);
         System.out.println("The lowest grade is " + lowNum);
         
-        filename = "students-grade.txt";
+        filename = "students-grades.txt";
         file = new java.io.File(filename);
         scan = new Scanner(file);
         
         String[] As = new String[99];
         String[] Bs = new String[99];
         int i =0;
+        int i2 = 0;
         while(scan.hasNext()){
             String name = scan.next();
             int num = scan.nextInt(); 
             if (num >= 90){
                 As[i] = name;
+                i++;
             }
             else if (num >=80){
-                Bs[i] = name;
+                Bs[i2] = name;
+                i2++;
             }
-            i++;
         }
-        
- 
-        
-        
-        
+        System.out.print("The following students received a grade of A: ");
+        for (int j = 0; j < i;j++){
+            System.out.print(As[j] + " ");
+        }
+        System.out.print("\nThe following students received a grade of B: ");
+        for (int j = 0; j < i2;j++){
+            System.out.print(Bs[j] + " ");
+        }
+        System.out.println();
 
-    }
+    }   
