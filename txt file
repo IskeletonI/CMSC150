@@ -22,65 +22,69 @@ public static void main(String[] args) throws Exception{
         System.out.println("The highest grade is " + highNum + " (" + highStu + ")");
         System.out.println("The lowest grade is " + lowNum + " (" + lowStu + ")");
         
+        //-----------------------------------------------------------------------------
+        
         filename = "students-grades.txt";
         file = new java.io.File(filename);
         scan = new Scanner(file);
         
-        String[] As = new String[99];
-        String[] Bs = new String[99];
-        String[] Cs = new String[99];
-        String[] Ds = new String[99];
-        String[] Fs = new String[99];
+        String[] Names = new String[99];
+        int[] Grades = new int[99];
         int i =0;
-        int i2 = 0;
-        int i3 = 0;
-        int i4 = 0;
-        int i5 = 0;
         while(scan.hasNext()){
             String name = scan.next();
             int num = scan.nextInt(); 
+            Names[i] = name;
             if (num >= 90){
-                As[i] = name;
-                i++;
+                Grades[i] = 1;
             }
             else if (num >=80){
-                Bs[i2] = name;
-                i2++;
+                Grades[i] = 2;
             }
             else if (num >=70){
-                Cs[i3] = name;
-                i3++;
+                Grades[i] = 3;
             }
             else if (num >=60){
-                Ds[i4] = name;
-                i4++;
+                Grades[i] = 4;
             }
             else{
-                Fs[i5] = name;
-                i5++;
+                Grades[i] = 5;
             }
+            i++;
         }
         System.out.print("The following students received a grade of A: ");
         for (int j = 0; j < i;j++){
-            System.out.print(As[j] + " ");
+            if (Grades[j] == 1){
+                System.out.print(Names[j] + " ");
+            }
         }
         System.out.print("\nThe following students received a grade of B: ");
-        for (int j = 0; j < i2;j++){
-            System.out.print(Bs[j] + " ");
+        for (int j = 0; j < i;j++){
+            if (Grades[j] == 2){
+                System.out.print(Names[j] + " ");
+            }
         }
         System.out.print("\nThe following students received a grade of C: ");
-        for (int j = 0; j < i3;j++){
-            System.out.print(Cs[j] + " ");
+        for (int j = 0; j < i;j++){
+            if (Grades[j] == 3){
+                System.out.print(Names[j] + " ");
+            }
         }
         System.out.print("\nThe following students received a grade of D: ");
-        for (int j = 0; j < i4;j++){
-            System.out.print(Ds[j] + " ");
+        for (int j = 0; j < i;j++){
+            if (Grades[j] == 4){
+                System.out.print(Names[j] + " ");
+            }
         }
         System.out.print("\nThe following students received a grade of F: ");
-        for (int j = 0; j < i5;j++){
-            System.out.print(Fs[j] + " ");
+        for (int j = 0; j < i;j++){
+            if (Grades[j] == 5){
+                System.out.print(Names[j] + " ");
+            }
         }
         System.out.println();
+        
+        //----------------------------------------------------------------------------------------------
         
         filename = "april.txt";
         file = new java.io.File(filename);
@@ -95,9 +99,11 @@ public static void main(String[] args) throws Exception{
         while (i != 0){
             System.out.print("Enter a video id (0 to quit): ");
             int n = scan1.nextInt();
-            System.out.println("Video " + n + " was rented " + rented[n] + " times");
             if (n == 0){
                 i = 0;
+            }
+            else {
+                System.out.println("Video " + n + " was rented " + rented[n] + " times");
             }
         }
 
