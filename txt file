@@ -1,22 +1,26 @@
- public static void main(String[] args) throws Exception{
+public static void main(String[] args) throws Exception{
         
-        String filename = "scores.txt";
+        String filename = "students-grades.txt";
         java.io.File file = new java.io.File(filename);
         Scanner scan = new Scanner(file);
         
         int highNum = 0, lowNum = 100;
+        String highStu = "", lowStu = "";
         while(scan.hasNext()){
+            String student = scan.next();
             int num = scan.nextInt(); 
             if (num > highNum){
                 highNum = num;
+                highStu = student;
             }
             if (num < lowNum){
                 lowNum = num;
+                lowStu = student;
             }
         }
         System.out.println("The file use is " + filename);
-        System.out.println("The highest grade is " + highNum);
-        System.out.println("The lowest grade is " + lowNum);
+        System.out.println("The highest grade is " + highNum + " (" + highStu + ")");
+        System.out.println("The lowest grade is " + lowNum + " (" + lowStu + ")");
         
         filename = "students-grades.txt";
         file = new java.io.File(filename);
@@ -24,8 +28,14 @@
         
         String[] As = new String[99];
         String[] Bs = new String[99];
+        String[] Cs = new String[99];
+        String[] Ds = new String[99];
+        String[] Fs = new String[99];
         int i =0;
         int i2 = 0;
+        int i3 = 0;
+        int i4 = 0;
+        int i5 = 0;
         while(scan.hasNext()){
             String name = scan.next();
             int num = scan.nextInt(); 
@@ -37,6 +47,18 @@
                 Bs[i2] = name;
                 i2++;
             }
+            else if (num >=70){
+                Cs[i3] = name;
+                i3++;
+            }
+            else if (num >=60){
+                Ds[i4] = name;
+                i4++;
+            }
+            else{
+                Fs[i5] = name;
+                i5++;
+            }
         }
         System.out.print("The following students received a grade of A: ");
         for (int j = 0; j < i;j++){
@@ -46,6 +68,39 @@
         for (int j = 0; j < i2;j++){
             System.out.print(Bs[j] + " ");
         }
+        System.out.print("\nThe following students received a grade of C: ");
+        for (int j = 0; j < i3;j++){
+            System.out.print(Cs[j] + " ");
+        }
+        System.out.print("\nThe following students received a grade of D: ");
+        for (int j = 0; j < i4;j++){
+            System.out.print(Ds[j] + " ");
+        }
+        System.out.print("\nThe following students received a grade of F: ");
+        for (int j = 0; j < i5;j++){
+            System.out.print(Fs[j] + " ");
+        }
         System.out.println();
+        
+        filename = "april.txt";
+        file = new java.io.File(filename);
+        scan = new Scanner(file);
+        int [] rented = new int[101];
+        Scanner scan1 = new Scanner(System.in);
+        while(scan.hasNext()){
+            int num = scan.nextInt();
+            rented[num]++;
+        }
+        i = 1;
+        while (i != 0){
+            System.out.print("Enter a video id (0 to quit): ");
+            int n = scan1.nextInt();
+            System.out.println("Video " + n + " was rented " + rented[n] + " times");
+            if (n == 0){
+                i = 0;
+            }
+        }
 
-    }   
+        
+
+    }  
